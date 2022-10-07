@@ -15,7 +15,7 @@ def readCsvString(string_data):
     return csvToArray(string_stream)
 
 
-def task3(csv_string):
+def task(csv_string):
     graph = readCsvString(csv_string)
 
     r1_nodes = {}
@@ -52,4 +52,4 @@ def task3(csv_string):
 
 
 # Вызов задания
-print(task3("1,2\n1,3\n2,4"))
+print(task("1,2\n1,3\n2,4"))
