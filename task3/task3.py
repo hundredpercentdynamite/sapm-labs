@@ -37,13 +37,19 @@ def task3(csv_string):
             if (l == i) & (r != j):
                 r5_nodes[r] = True
 
-    print("r1 nodes", list(r1_nodes.keys()))
-    print("r2 nodes", list(r2_nodes.keys()))
-    print("r3 nodes", list(r3_nodes.keys()))
-    print("r4 nodes", list(r4_nodes.keys()))
-    print("r5 nodes", list(r5_nodes.keys()))
-    return r1_nodes, r2_nodes, r3_nodes, r4_nodes, r5_nodes
+    list1 = list(r1_nodes.keys())
+    list2 = list(r2_nodes.keys())
+    list3 = list(r3_nodes.keys())
+    list4 = list(r4_nodes.keys())
+    list5 = list(r5_nodes.keys())
+
+    print("r1 nodes", list1)
+    print("r2 nodes", list2)
+    print("r3 nodes", list3)
+    print("r4 nodes", list4)
+    print("r5 nodes", list5)
+    return [list1, list2, list3, list4, list5]
 
 
 # Вызов задания
-task3("1,2\n1,3\n2,4")
+print(task3("1,2\n1,3\n2,4"))
