@@ -83,8 +83,8 @@ def get_entropy(graph_stats):
         total_sum += in_sum
     return -total_sum
 
-def task():
-    str_graph = "1,2\n2,3\n2,4\n2,5"
+def task(str_graph):
+    # str_graph = "1,2\n1,3\n3,4\n3,5"
     # str_graph = "1,2\n2,3\n2,4\n2,5\n3,6\n3,7"
     graph = readCsvString(str_graph)
     node_list = get_node_list(graph)
@@ -95,10 +95,9 @@ def task():
         r3 = get_descendant(node, graph)
         r4 = get_ancestor(node, graph)
         r5 = get_neighbours(node, graph)
-        result.append([node, [len(r1), len(r2), len(r3), len(r4), len(r5)]])
+        result.append(["n" + node, [len(r1), len(r2), len(r3), len(r4), len(r5)]])
+    entropy = get_entropy(result)
+    result.append(['Entropy:', entropy])
     for row in result:
         print(row)
-    entropy = get_entropy(result)
-    print("Entropy: ", entropy)
-
-task()
+    return result
