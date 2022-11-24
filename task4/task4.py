@@ -100,4 +100,4 @@ def task(str_graph):
     result.append(['Entropy:', entropy])
     for row in result:
         print(row)
-    return result
+    return entropy
