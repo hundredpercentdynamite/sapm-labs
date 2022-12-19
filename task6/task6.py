@@ -5,12 +5,12 @@ import numpy as np
 def getComparisons(ranks):
     tables = []
     # Наполняем шаблонами
-    for i in range(len(ranks[0])):
-        tables.append([
-            [0.5, 0, 0],
-            [0, 0.5, 0],
-            [0, 0, 0.5],
-        ])
+    n = len(ranks)
+    m = len(ranks[0])
+    for i in range(m):
+        template = np.zeros((n, n))
+        np.fill_diagonal(template, 0.5)
+        tables.append(template)
     # Для самопроверки
     # tableA = [
     #     [0.5, 0.5, 0],
@@ -112,3 +112,5 @@ def task(jsonString):
     K = calcGeneralEstimation(X, 0.001)
     result = json.dumps(K.tolist())
     return result
+
+print(task("[[1,2,1.5],[3,2,3],[2,2,1.5]]"))
