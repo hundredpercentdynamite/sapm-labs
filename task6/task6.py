@@ -112,5 +112,3 @@ def task(jsonString):
     K = calcGeneralEstimation(X, 0.001)
     result = json.dumps(K.tolist())
     return result
-
-print(task("[[1,2,1.5],[3,2,3],[2,2,1.5]]"))
