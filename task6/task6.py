@@ -105,7 +105,7 @@ def parseJsonString(str):
     return json.loads(str)
 
 def task(jsonString):
-    table = parseJsonString(jsonString)
+    table = np.array(parseJsonString(jsonString)).transpose()
 
     comparisons = getComparisons(table)
     X = calcX(comparisons)
